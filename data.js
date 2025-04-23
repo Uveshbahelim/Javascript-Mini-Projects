@@ -79,4 +79,8 @@ const projects = [
         name: "Todo Second",
         link: "todo-second/index.html",
     },
+    {
+        name: "Drag Drop",
+        link: "drag-drop/index.html",
+    },
   ];
