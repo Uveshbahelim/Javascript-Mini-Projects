@@ -32,6 +32,10 @@ const projects = [
         link: "password-generator/index.html",
     },
     {
+        name: "Password Validator",
+        link: "password-validator/index.html",
+    },
+    {
         name: "Product Filter",
         link: "product-filter/index.html",
     },
