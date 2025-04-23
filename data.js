@@ -1,6 +1,6 @@
 const projects = [
     {
-      name: "Age Calculator",
+      name: "Age",
       link: "age-calculator/index.html",
     },
     {
