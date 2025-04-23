@@ -1,0 +1,124 @@
+/* *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: "poppins",sans-serif;
+    background-color: #fa3546;
+    margin: 20px;
+}
+.container {
+    position: absolute;
+    width: min(400px, 90vw);
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px rgba(0 , 0,  0,  0.2);
+}
+h1{
+    margin-bottom: 5px;
+}
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+
+input {
+  width: 90%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1.5px solid #000000;
+  border-radius: 5px;
+}
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px;
+}
+button {
+    width: 95%;
+    background-color: #fa3546;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 15px 0;
+    border-radius: 10px;
+  }
+  button:hover {
+    background-color: #45a049;
+  }
+  .story {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    border-radius: 10px;
+    display: none;
+  }
+   */
+
+   body {
+    font-family: "Poppins", sans-serif;
+    box-sizing: border-box;
+    background-color: #fa3546;
+    margin: 20px;
+  }
+  
+  .container {
+    position: absolute;
+    width: min(400px, 90vw);
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 30px 30px rgba(0, 0, 0, 0.2);
+  }
+  
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+  }
+  
+  input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1.5px solid #000000;
+    border-radius: 5px;
+  }
+  
+  label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  button {
+    width: 95%;
+    background-color: #fa3546;
+    color: white;
+    cursor: pointer;
+    border: none;
+    padding: 15px 0;
+    border-radius: 10px;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .story {
+    margin-top: 20px;
+    padding: 15px;
+    background: #fff3cd;
+    border-radius: 10px;
+    display: none;
+  }

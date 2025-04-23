@@ -1,0 +1,106 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg,#153677, #4e085f);
+    padding: 10px;
+}
+
+.todo {
+    width: 100%;
+    max-width: 540px;
+    background: #fff;
+    margin: 100px auto 20px;
+    padding: 40px 30px 70px;
+    border-radius: 10px;
+}
+
+.todo h2 {
+    color: #002765;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.todo h2 img {
+    width: 30px;
+    margin-left: 10px;
+}
+.row{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #edeef0;
+    border-radius: 30px;
+    padding-left: 20px;
+    margin-bottom: 25px;
+}
+
+input {
+    flex: 1;
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 10px;
+    font-weight: 14px;
+}
+button {
+    outline: none;
+    border: none;
+    padding: 16px 50px;
+    background: #ff5945;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 40px;
+}
+
+ul li {
+    list-style: none;
+    font-size: 17px;
+    padding: 12px 8px 12px 50px;
+    user-select: none;
+    position: relative;
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    height: 22px;
+    width: 22px;
+    background-image: url('https://img.favpng.com/23/1/6/circle-clip-art-png-favpng-tSH4YSg0ktyZGtKRUGAGc80hL_t.jpg');
+    top: 10px;
+    left: 8px;
+    background-size: cover;
+    background-position: center;
+}
+
+.checked {
+    color: #555;
+    text-decoration: line-through;
+}
+ul li.checked::before {
+    background-image: url('data:image/png;base64,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');
+    height: 22px;
+    width: 22px;
+}
+
+ul li span {
+    position: absolute;
+    right: 0;
+    top: 5px;
+    width: 40px;
+    height: 40px;
+    font-size: 22px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+}
+
+ul li span:hover {
+    background: #edeef0;
+}

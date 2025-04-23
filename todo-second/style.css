@@ -1,0 +1,130 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100%;
+    background: #639ac9;
+    height: 100vh;
+}
+#container {
+    position: absolute;
+    width: 100%;
+    max-width: 500px;
+    border: 2px solid #fff;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    padding:30px;
+}
+#newTask {
+    position: relative;
+    background: #fff;
+    padding: 30px;
+    border-radius: 5px;
+
+}
+#newTask input {
+    position: relative;
+    padding: 12px;
+    border: 2px solid #699ac9;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 80%;
+    color: #111111;
+    transition: 0.8s;
+}
+#newTask input:focus {
+    outline: none;
+    border-color: #0a76d5;
+}
+#newTask #push {
+    position: relative;
+    background-color: #699ac9;
+    padding: 13px;
+    float: right;
+    width: 18%;
+    border: 0px ;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    color: #fff;
+}
+#tasks {
+    background-color: #ffffff;
+    padding: 30px 20px;
+    margin-top: 60px;
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+    width: 100%;
+    position: relative;
+}
+
+.task{
+    background-color: #ffffff;
+    height: 50px;
+    width: 100%;
+    padding: 5px 10px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    border-bottom: 2px solid #699ac9; 
+    padding: 10px;
+}
+.task span {
+    font-family: 'popins',sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+}
+.task button {
+    background-color: #699ac9;
+    color: #ffffff;
+    height: 40px;
+    width: 40px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+}
+.completed {
+    text-decoration: line-through;
+    color: gray; /* Optional: Change the text color when completed */
+}
+
+/* Optional CSS for edit button and save button */
+button.edit, button.save {
+    margin-left: 5px;
+}
+
+button.save {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button.save:hover {
+    background-color: #45a049;
+}
+
+button.edit, button.delete {
+    background-color: #699ac9;
+    color: white;
+    border: none;
+    padding: 5px;
+    cursor: pointer;
+}
+
+button.edit:hover, button.delete:hover {
+    background-color: #699ac9;
+}
+
+/* To style completed tasks */
+.taskname.completed {
+    text-decoration: line-through;
+    color: gray;
+}
