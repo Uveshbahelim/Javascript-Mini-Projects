@@ -1,47 +1,29 @@
-let userInput = document.getElementById('date')
+const userInput = document.getElementById('date');
 userInput.max = new Date().toISOString().split('T')[0];
-let result = document.getElementById('result')
+
+const result = document.getElementById('result');
 
 function calculateAge() {
-    let birthDate = new Date(userInput.value)
-    let today = new Date();
+  const birthDate = new Date(userInput.value);
+  const today = new Date();
 
-    let d1 = birthDate.getDate()
-    let m1 = birthDate.getMonth()
-    let y1 = birthDate.getFullYear()
+  let day = today.getDate() - birthDate.getDate();
+  let month = today.getMonth() - birthDate.getMonth();
+  let year = today.getFullYear() - birthDate.getFullYear();
 
-    let d2 = today.getDate()
-    let m2 = today.getMonth()
-    let y2 = today.getFullYear()
+  if (day < 0) {
+    month--;
+    day += getDaysInMonth(today.getFullYear(), today.getMonth() - 1);
+  }
 
-    let d3,m3,y3;
+  if (month < 0) {
+    year--;
+    month += 12;
+  }
 
-    y3 = y2 - y1;
-
-    if(m2 >= m1) {
-        m3 = m2 - m1;
-    }else {
-        y3--;
-        m3 = 12 + m2 - m1;
-    }
-
-    if(d2 >= d1) {
-        d3 = d2 - d1;
-    }else {
-        m3--;
-        d3= getDaysInMonth(y1,m1)  + d2 -d1;
-    }
-    if(m3 <0) {
-        m3=11;
-        y3--;            
-    }
-    
-    result.innerHTML= `You are ${y3} Years, ${m3} months and ${d3} days old`
+  result.textContent = `You are ${year} years, ${month} months, and ${day} days old.`;
 }
 
-function getDaysInMonth (year,month){
- return new Date(year,month  + 1,0).getDate();
+function getDaysInMonth(year, month) {
+  return new Date(year, month + 1, 0).getDate();
 }
-
-
-

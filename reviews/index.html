@@ -3,52 +3,60 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reviews</title>
+
+    <!-- Font Awesome for Icons -->
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-10/css/all.min.css"
-      integrity="sha512-Pv1WJMqAtVgNNct5vhq+4cgkKinKpV1jCwSWD4am9CjwxsJSCkLWKcE/ZBqHnEE1mHs01c8B0GMvcn/pQ/yrog=="
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-dymHYlFd6L1cOPZJlMmgk1C7KfekPoqT+L1G5g5x6+g+Ub7h4E5aI1S3FZtD3xY9xYhx7y7J8pIpY0EZK3aJDg=="
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+
+    <!-- Your Custom CSS -->
     <link rel="stylesheet" href="style.css" />
-    <title>Reviews</title>
   </head>
+
   <body>
     <main>
       <section class="container">
-        <!----title----->
+        <!-- Title Section -->
         <div class="title">
-          <h2>Our reviews</h2>
+          <h2>Our Reviews</h2>
           <div class="underline"></div>
         </div>
-        <!-------reviews------>
+
+        <!-- Review Card -->
         <article class="review">
           <div class="img-container">
-            <img src="person-1.jpeg" id="person-img" alt="" />
+            <img src="person-1.jpeg" id="person-img" alt="Person" />
           </div>
 
-          <h4 id="author">Sara jones</h4>
-          <p id="job">ux designer</p>
+          <h4 id="author">Sara Jones</h4>
+          <p id="job">UX Designer</p>
           <p id="info">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iusto,
-            porro. Odio eveniet laboriosam, quas distinctio similique deserunt
-            hic recusandae nostrum asperiores sequi sint?
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto
+            porro odio eveniet laboriosam quas distinctio.
           </p>
-          <!-------prev next buttons-------->
+
+          <!-- Navigation Buttons -->
           <div class="button-container">
-            <button class="prev-btn">
+            <button class="prev-btn" aria-label="Previous Review">
               <i class="fas fa-chevron-left"></i>
             </button>
-            <button class="next-btn">
+            <button class="next-btn" aria-label="Next Review">
               <i class="fas fa-chevron-right"></i>
             </button>
           </div>
-          <!---random button--->
-          <button class="random-btn">surprise me</button>
+
+          <!-- Random Button -->
+          <button class="random-btn">Surprise Me</button>
         </article>
       </section>
     </main>
 
+    <!-- JavaScript -->
     <script src="script.js"></script>
   </body>
 </html>

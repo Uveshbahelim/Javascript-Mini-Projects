@@ -1,49 +1,21 @@
-let count = 0 ;
+let count = 0;
 
-const value = document.querySelector('#value');
+const value = document.getElementById('value');
 const btns = document.querySelectorAll('.btn');
 
-// btns.forEach(function (btn) {
-//     btn.addEventListener('click', function (e) {
-//         const styles = e.currentTarget.classList;
-//         if (styles.contains("decrease")) {
-//             count--;
-//         }else if(styles.contains("increase")) {
-//             count++;
-//         }else if(styles.contains("reset")){
-//             count = 0;
-//         }
+btns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    const action = btn.classList;
 
-//         if (count < 0) {
-//             value.style.color = "red";
-//         }else if (count > 0) {
-//             value.style.color = "blue";
-//         }else{
-//             value.style.color = "black";
-//         }
-//         value.textContent =count;
-//     })
-// });
+    if (action.contains('decrease')) {
+      count--;
+    } else if (action.contains('increase')) {
+      count++;
+    } else if (action.contains('reset')) {
+      count = 0;
+    }
 
-
-btns.forEach( function (btn) {
-    btn.addEventListener('click' , function (e) {
-        const styles = e.currentTarget.classList;
-       if(styles.contains ("decrease")) {
-        count--
-       }else if(styles.contains ("increase")) {
-        count++
-       } else if (styles.contains ("reset")) {
-        count= 0;
-       }
-
-       if(count < 0) {
-        value.style.color = "blue"
-       }else if (count > 0) {
-        value.style.color = "red"
-       }else{
-            value.style.color = "black";
-        }
-       value.textContent = count;
-    })
-})
+    value.textContent = count;
+    value.style.color = count > 0 ? 'red' : count < 0 ? 'blue' : 'black';
+  });
+});

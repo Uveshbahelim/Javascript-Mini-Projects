@@ -79,68 +79,37 @@ const menu = [
       img: "./images/item-10.jpeg",
       desc: `skateboard fam synth authentic semiotics. Live-edge lyft af, edison bulb yuccie crucifix microdosing.`,
     },
-  ];
+];
 
 const sectionCenter = document.querySelector(".section-center");
-/*filter buttons */
-const filterBtns =document.querySelectorAll(".filter-btn");
-// load items //
-window.addEventListener("DOMContentLoaded", function () {
-   displayMenuItems(menu)
+const filterBtns = document.querySelectorAll(".filter-btn");
+
+// Load all items on page load
+window.addEventListener("DOMContentLoaded", () => displayMenuItems(menu));
+
+// Filter items on button click
+filterBtns.forEach(btn => {
+  btn.addEventListener("click", e => {
+    const category = e.currentTarget.dataset.id;
+    const filteredMenu = category === "all"
+      ? menu
+      : menu.filter(item => item.category === category);
+    displayMenuItems(filteredMenu);
+  });
 });
 
-// filtet items 
-
-// filterBtns.forEach(function (btn) {
-//   btn.addEventListener('click', function(e) {
-//     const category =e.currentTarget.dataset.id;
-//     const menuCategory = menu.filter(function (menuItem) {
-//     if(menuItem.category === category){
-//       return menuItem;
-//     }
-//     });
-//     if (category == 'all') {
-//       displayMenuItems(menu)
-//     }
-//     else {
-//       displayMenuItems(menuCategory)
-//     }
-//    })
-// });
-
-filterBtns.forEach(function (btn) {
-  btn.addEventListener('click', function (e) {
-   const category = e.currentTarget.dataset.id;
-   const menuCategory = menu.filter( function (menuItem) {
-    if(menuItem.category == category){
-      return menuItem;
-    }
-   })
-    if(category == 'all'){
-      displayMenuItems(menu)
-    } else {
-      displayMenuItems(menuCategory)
-    }
-  })
-})
-
-
-function displayMenuItems(menuItems) {
-  let displayMnu = menuItems.map(function (item) {
-
-    return `<article class="menu-item">
-          <img src=${item.img} alt=${item.title} class="photo" />
-          <div class="item-info">
-            <header>
-              <h4>${item.title}</h4>
-              <h4 class="price"> ${item.price}</h4>
-            </header>
-            <p class="item-text">
-              ${item.desc}
-            </p>
-          </div>
-        </article>`
-  });
-  displayMnu = displayMnu.join("");
-  sectionCenter.innerHTML = displayMnu;
+// Render menu items
+function displayMenuItems(items) {
+  sectionCenter.innerHTML = items.map(item => `
+    <article class="menu-item">
+      <img src="${item.img}" alt="${item.title}" class="photo" />
+      <div class="item-info">
+        <header>
+          <h4>${item.title}</h4>
+          <h4 class="price">$${item.price}</h4>
+        </header>
+        <p class="item-text">${item.desc}</p>
+      </div>
+    </article>
+  `).join("");
 }

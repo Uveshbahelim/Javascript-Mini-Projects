@@ -1,38 +1,27 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
     const passwordInput = document.querySelector(".pass-field input");
     const eyeIcon = document.querySelector(".pass-field i");
     const requirementListItems = document.querySelectorAll(".requirement-list li i");
-
+  
     const requirements = [
-        {regex: /.{8,}/, index: 0},
-        {regex: /[0-9]/, index: 1},
-        {regex: /[a-z]/, index: 2},
-        {regex: /[A-Z]/, index: 3},
+      { regex: /.{8,}/, index: 0 },       // At least 8 characters
+      { regex: /[0-9]/, index: 1 },       // Contains a number
+      { regex: /[a-z]/, index: 2 },       // Contains a lowercase letter
+      { regex: /[A-Z]/, index: 3 },       // Contains an uppercase letter
     ];
-
-    passwordInput.addEventListener("keyup", function(e) {
-        const value = e.target.value;
-
-        requirements.forEach(function(requirement, index) {
-            const isValid = requirement.regex.test(value);
-            const requirementIcon = requirementListItems[index];
-
-            if (isValid) {
-                requirementIcon.className = "fa fa-check";
-            } else {
-                requirementIcon.className = "fa fa-circle";
-            }
-        });
+  
+    passwordInput.addEventListener("keyup", ({ target: { value } }) => {
+      requirements.forEach(({ regex, index }) => {
+        const isValid = regex.test(value);
+        const requirementIcon = requirementListItems[index];
+        requirementIcon.className = isValid ? "fa fa-check" : "fa fa-circle";
+      });
     });
-
-    eyeIcon.addEventListener("click", function() {
-        if (passwordInput.type === "password") {
-            passwordInput.type = "text";
-            eyeIcon.className = "fa fa-eye-slash";
-        } else {
-            passwordInput.type = "password";
-            eyeIcon.className = "fa fa-eye";
-        }
+  
+    eyeIcon.addEventListener("click", () => {
+      const isPassword = passwordInput.type === "password";
+      passwordInput.type = isPassword ? "text" : "password";
+      eyeIcon.className = isPassword ? "fa fa-eye-slash" : "fa fa-eye";
     });
-});
-
+  });
+  

@@ -1,17 +1,9 @@
-const hex = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
-
+const hex = "0123456789ABCDEF";
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color");
 
-btn.addEventListener("click", function () {
-    let hexColor = "#";
-    for(let i =0;i<6;i++){
-        hexColor += hex[getrandomNumber()]
-    }
-    color.textContent = hexColor;
-   document.body.style.backgroundColor = hexColor;
+btn.addEventListener("click", () => {
+  const hexColor = "#" + Array.from({ length: 6 }, () => hex[Math.floor(Math.random() * 16)]).join('');
+  document.body.style.backgroundColor = hexColor;
+  color.textContent = hexColor;
 });
-
-function getrandomNumber() {
-    return Math.floor(Math.random() * hex.length)
-}
