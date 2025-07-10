@@ -83,4 +83,8 @@ const projects = [
         name: "Drag Drop",
         link: "drag-drop/index.html",
     },
+    {
+        name: "Quotes",
+        link: "quotes/index.html",  
+    },
   ];

@@ -12,3 +12,4 @@ const celsius = document.querySelector("#celsius")
      celsius.value = (((fahrenheit.value - 32) * 5) / 9).toFixed(2);
      if (!fahrenheit.value )  celsius.value = ""; 
  })
+
