@@ -87,4 +87,16 @@ const projects = [
         name: "Quotes",
         link: "quotes/index.html",  
     },
+    {
+        name: "Tayping-test",
+        link: "tayping-test/index.html",  
+    },
+    {
+        name: "No Guessing",
+        link: "no-guessing/index.html",  
+    },
+    {
+        name: "Digitle Clock",
+        link: "digitle-clock/index.html",  
+    },
   ];
