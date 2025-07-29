@@ -99,4 +99,8 @@ const projects = [
         name: "Digitle Clock",
         link: "digitle-clock/index.html",  
     },
+    {
+        name: "To-Do",
+        link: "To-Do/index.html",  
+    },
   ];
