@@ -103,4 +103,8 @@ const projects = [
         name: "To-Do",
         link: "To-Do/index.html",  
     },
+    {
+        name: "Rich-Text-Editor",
+        link:"Text-Editoy/index.html",
+    }
   ];
